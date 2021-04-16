@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd</title>
+    <link rel="stylesheet" href="./grade_styles.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="return percentage_01()">
+            <div class="form-title">
+                <h3>Find your percentage and Grade</h3>
+            </div><br>
+            <div class="form-container">
+                <div class="form-links">
+                    <input type="number" name="Marks" id="marks" placeholder="Enter your marks">
+                </div><br>
+                <div class="form-links">
+                    <input type="number" name="totalMarks" id="totalMarks" placeholder="Enter your Total Marks">
+                </div><br>
+                <div class="form-links">
+                    <label for="result">Percentage :</label><br>
+                    <input type="text" name="result" id="result" placeholder="Percentage" disabled>
+                </div><br>
+                <div class="form-links">
+                    <label for="grade">Grade :</label><br>
+                    <input type="text" name="grade" id="grade" placeholder="Grade" disabled>
+                </div><br>
+            </div>
+            <div class="button">
+                <input type="submit" value="Check">
+            </div>
+        </form>
+    </div>
+<script src=".//grade-script.js"></script>
+</body>
+</html>

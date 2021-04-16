@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: gray;
+}
+.container {
+    margin: 20px auto;
+    max-width: 1000px;
+    margin-top: 180px;
+}
+form {
+    max-width: 400px;
+    padding: 30px;
+    margin: 20px auto;
+    background: linear-gradient(45deg, black,coral);
+    color: #fff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+.form-title {
+    font-size: 20px;
+    border-bottom: 2px solid #fff;
+}
+.form-links input {
+    width: 90%;
+}
+.button {
+    text-align: center;
+}
+.button input {
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid#fff;
+    background: rgb(100, 34, 10);
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+.button input:hover {
+    background: rgb(184, 83, 46);
+}
+@media(max-width: 768px) {
+    .container {
+        margin: 20px;
+        margin-top: 100px;
+    }
+}
