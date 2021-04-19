@@ -20,24 +20,24 @@
 
         check = parseInt(perse);
         
-        if(check>=60) {
+        if(check>=75) {
             output = "A Grade"
             document.getElementById('grade').value=output;
         }
-        else if(check <= 60 && perse >= 50) {
+        else if(check < 75 && check >= 60) {
             output = "B Grade"
             document.getElementById('grade').value=output;
         }
-        else if(check <= 50 && perse >= 35) {
+        else if(check < 60 && check >= 45) {
             output = "C Grade"
             document.getElementById('grade').value=output;
         }
-        else if(check <= 35 && check>=5) {
-            output = "D Grade (Fail)"
+        else if(check < 45 && check >= 35) {
+            output = "D Grade"
             document.getElementById('grade').value=output;
         }
-        else if(check <= 5) {
-            output = "No need to come to college"
+        else if(check < 35) {
+            output = "Fail"
             document.getElementById('grade').value=output;
         }
         
