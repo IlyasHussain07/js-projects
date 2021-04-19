@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-interest</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+        form {
+            background: #fff;
+            max-width: 400px;
+            padding: 30px;
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .form-title {
+            font-size: 30px;
+        }
+        .form-title p {
+            border-bottom: 2px solid lightgreen;
+        }
+        .form-link input{
+            width: 100%;
+            margin-top: 5px;
+        }
+        .form-submit {
+            text-align: center;
+        }
+        .form-submit input {
+            background: lightgreen;
+            border: none;
+            padding: 10px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        .form-submit input:hover {
+            background: rgb(75, 182, 75);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="return interest()">
+            <div class="form-title">
+                <p>Simple-Interest</p>
+            </div><br>
+            <div class="form-link">
+                <label for="pa">Total Amount :</label><br>
+                <input type="number" name="principle Amount" id="pa" placeholder="Total Amount">
+            </div><br>
+            <div class="form-link">
+                <label for="time">Time :</label><br>
+                <input type="number" name="Interest Amount" id="time" placeholder="Time">
+            </div><br>
+            <div class="form-link">
+                <label for="ri">Rate of interest per annum :</label><br>
+                <input type="number" name="Interest per annum" id="ri" placeholder="Rate of interest">
+            </div><br>
+            <div class="form-link">
+                <label for="output">Total Interest :</label><br>
+                <input type="text" name="Result" id="output" placeholder="Total Interest" disabled>
+            </div><br>
+            <div class="form-submit">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+<script>
+    
+    var amount;
+    var Time;
+    var Interest;
+    var result;
+
+    function interest() {
+
+        amount = parseInt(document.getElementById('pa').value);
+
+        Time = parseInt(document.getElementById('time').value);
+
+        Interest = parseInt(document.getElementById('ri').value);
+
+        result = amount * Time * Interest / 100 ;
+
+        document.getElementById('output').value=result;
+
+        alert('The total interest is '+ result);
+
+        return false;
+    }
+
+
+</script>
+</body>
+</html>
