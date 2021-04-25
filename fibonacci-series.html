@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .container{
+            background: url(./work5.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            max-width: 350px;
+            width: 100%;
+            border-radius: 10px
+        }
+        .form-title{
+            padding: 20px;
+            background: linear-gradient(45deg, black,teal);
+            color: #fff;
+            font-size: 30px;
+            border-radius: 10px
+        }
+        .form-link{
+            padding-left: 10px;
+        }
+        .form-link input {
+            width: 95%;
+            outline: none;
+            background: none;
+            border: none;
+            border-bottom: 2px solid teal;
+        }
+        .form-submit {
+            text-align: center;
+        }
+        .form-submit input {
+            padding: 5px;
+            background: none;
+            border-radius: 25px;
+            width: 200px;
+            border: 1px solid teal;
+        }
+        .form-submit input:hover {
+            background: linear-gradient(90deg, black, teal);
+            color: #fff;
+            
+        }
+        #result {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-title">
+                Fibonacci Series
+            </div><br>
+            <div class="form-link">
+                <input type="text" name="number" id="ip1" placeholder="Enter a number">
+            </div><br>
+            <div class="form-submit">
+                <input type="button" name="output" id="op" onclick="series()" value="Check">
+            </div><br>
+            <p id="result"></p>
+        </form>
+    </div>
+
+
+    <script>
+        var input = 4;
+
+        function series() {
+            input = parseInt(document.getElementById('ip1').value);
+            var n1 = 0, n2 = 1, nextTerm;
+            var output = "";    
+           
+            for(var i = 2 ; i <= input ; i++){
+                output += n1 + "," , n2 ;
+                console.log(n1);
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+            }
+            document.getElementById('result').innerHTML=output;
+            return false;
+        }
+
+
+    </script>
+</body>
+</html>

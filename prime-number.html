@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .container{
+            background: url(./background-waterfall.gif);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: black;
+            color: #fff;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 80%;
+            max-width: 350px;
+            border-radius: 25px;
+        }
+        .form-title{
+            font-size: 30px;
+         
+        }
+        .form-link input{
+            width: 100%;
+            outline: none;
+            border: none;
+            background: none;
+            color: #fff;
+            border-bottom: 2px solid green;
+
+        }
+        .form-submit {
+            text-align: center;
+        }
+        .form-submit input {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid green;
+            background: transparent;
+            color: #fff;
+            border-radius: 25px;
+        }
+        .form-submit input:hover {
+            transition: 1s;
+            background: green;
+            border: 2px solid #fff;
+            color: black;
+        }
+        #result {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="return primeNumber()">
+            <div class="form-title">
+                Prime Number
+            </div><br>
+            <div class="form-link">
+                <input type="text" name="input" id="ip1" placeholder="Enter a number">
+            </div><br>
+            <div class="form-submit">
+                <input type="submit" name="result" id="output" value="Check">
+            </div><br>
+            <p id="result"></p>
+        </form>
+    </div>
+
+<script>
+    var input;
+
+    function primeNumber() {
+        input = parseInt(document.getElementById('ip1').value);
+        var isPrime = true;
+        if(input == 1){
+            console.log(input+' : This is neither prime or nor composite ');
+        }
+        else if(input > 1){
+            for(var i = 2 ; i < input ; i++){
+                if(input % i == 0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime){
+                console.log(input + ' : This is a prime number');
+                document.getElementById('result').innerHTML='This is a prime number';
+            }
+            else {
+                console.log(input + ' : This is not a prime number');
+                document.getElementById('result').innerHTML='This is not a prime number';
+            }
+        }
+        return false;
+    }
+
+
+</script>
+</body>
+</html>
