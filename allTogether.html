@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Check</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            background: url(./Screen.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            padding: 50px;
+            max-width: 350px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+        .form-title{
+            font-size: 30px;
+            padding: 10px;
+        }
+        .form-links{
+            width: 100%;
+        }
+        .form-links input{
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid lightseagreen;
+            width: 100%;
+        }
+        .form-result {
+            text-align: center;
+        }
+        .form-result input {
+            padding: 5px;
+            width: 200px;
+            background: none;
+            border: 1px solid lightseagreen;
+            border-radius: 25px;
+            font-size: 15px;
+        }
+        .form-result input:hover {
+            background: lightseagreen;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-title"><p>Check for EvenOdd And Prime</p></div><br>
+            <div class="form-links">
+                <input type="text" id="input" placeholder="Enter a number">
+            </div><br>
+            <div class="form-links">
+                <input type="text" id="output1" placeholder="Even or Odd">
+            </div><br>
+            <div class="form-links">
+                <input type="text" id="output2" placeholder="Prime or not">
+            </div><br>
+            <div class="form-result">
+                <input type="button" id="btn" onclick="together()" value="Check">
+            </div>
+        </form>
+    </div>
+
+<script>
+    
+var firstInput = '';
+var firstOutput = '';
+var secoundOutput = '';
+
+function evenNumber(){
+    firstInput = parseInt(document.getElementById('input').value);
+    if(firstInput % 2 == 0){
+        firstOutput = 'This is a even number';
+        document.getElementById('output1').value=firstOutput;
+    }
+    else{
+        firstOutput = 'This is a Odd Number';
+        document.getElementById('output1').value=firstOutput;
+    }
+}
+
+function isPrimeNumber(){
+    firstInput = parseInt(document.getElementById('input').value);
+    isPrime = true;
+    if(firstInput == 1){
+        secoundOutput = 'This is not a prime number';
+        document.getElementById('output2').value=secoundOutput;
+    }
+    else if(firstInput >1){
+       for(var i=2; i < firstInput ; i++){
+           if(firstInput % i == 0){
+               isPrime = false;
+               break;
+           }
+       }
+        if(isPrime){
+            secoundOutput = 'This is a prime number';
+            document.getElementById('output2').value=secoundOutput;
+        }
+        else{
+            secoundOutput = 'This is not a prime number';
+            document.getElementById('output2').value=secoundOutput;
+            }
+    }
+}
+
+
+
+function together(){
+    evenNumber();
+    isPrimeNumber();
+}
+
+</script>
+</body>
+</html>
