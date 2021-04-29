@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup / extra</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+        }
+        .bodybow {
+            height: 100%;
+            background: url(./notebook.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #myform {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            max-width: 350px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .btn-click {
+            position: absolute;
+            top: 400px;
+            right: 100px;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            font-size: 20px;
+            border: none;
+            background: #DEB887;
+            border-radius: 10px;
+            color: #fff;
+        }
+        @media(max-width: 768px){
+            .btn-click {
+                right: 0;
+            }
+        }
+        .btn-click:hover {
+            background: rgb(17, 160, 105);
+            
+        }
+        .form {
+            width: 100%;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;   
+        }
+        .form-title {
+            padding: 10px;
+            font-size: 30px;
+            background: linear-gradient(45deg,black,teal);
+            color: #fff;
+        }
+        .form-link {
+            padding: 10px;
+            margin: 10px;
+
+        }
+        .form-link input {
+            width: 100%;
+            outline: none;
+            background: none;
+            border: none;
+            border-bottom: 2px solid teal;
+            color: #fff;
+        }
+        .form-submit {
+            text-align: center;
+        }
+        .form-submit button {
+            width: 150px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid black;
+            font-size: 16px;
+        }
+        .form-submit .btn-check:hover {
+            background: teal;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .form-submit .btn-close:hover {
+            background: red;
+            color: #fff;
+            border: 1px solid black;
+        }
+        .form span{
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(45deg,#fff,teal);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 10px;
+            animation: animBorder 5s linear infinite;
+        }
+        @keyframes animBorder {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+ <div class="bodybow" id="bow">
+    <button class="btn-click" onclick="openCall()" id="btn-clickme">Click me!</button>
+</div>
+    <div class="inside">
+        <div id="myform">
+            <div class="form">
+                <span></span>
+                <div class="form-title">Addition</div>
+                <div class="form-link">
+                    <input type="text" name="input" id="input1" placeholder="Enter a number">
+                </div>
+                <div class="form-link">
+                    <input type="text" name="input" id="input2" placeholder="Enter a number">
+                </div>
+                <div class="form-link">
+                    <input type="text" name="output" id="output" placeholder="Output" disabled>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn-check" onclick="addNumber()">Check</button>
+                    <button class="btn-close" onclick="closeCall()">Cancel</button>
+                </div><br>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    let inputValue1 = '';
+    let inputValue2 = '';
+    let outputValue;
+
+    function addNumber() {
+        inputValue1 = parseInt(document.getElementById('input1').value);
+        inputValue2 = parseInt(document.getElementById('input2').value);
+
+        outputValue = inputValue1 + inputValue2;
+
+        document.getElementById('output').value=outputValue;
+    }
+
+
+    function openCall() {
+        document.getElementById('myform').style.display = 'block';
+        document.getElementById('btn-clickme').style.display = 'none';
+        document.getElementById('bow').style.opacity = '0.6';
+    }
+
+    function closeCall() {
+        document.getElementById('myform').style.display = 'none';
+        document.getElementById('btn-clickme').style.display = 'block';
+        document.getElementById('bow').style.opacity = '1';
+
+    }
+
+
+</script>
+</body>
+</html>
